@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Portfolio</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        body {
+            background-color: tomato;
+            margin: 0%;
+            align-items: center;
+        }
+
+        .intro {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #intro1 {
+            border-radius: 200px;
+            width: 500px;
+            margin: 50px;
+        }
+
+        #intro1:hover {
+            margin: 35px;
+            border: 15px solid magenta;
+        }
+
+        #intro2 h1 {
+            font-size: 65px;
+        }
+
+        #intro2 h2 {
+            font-size: 40px;
+            display: inline;
+        }
+
+        .gear {
+            display: inline;
+            height: 700px;
+            width: 700px;
+            transform: translate(700px, 100px);
+            position: fixed;
+            z-index: -1;
+        }
+
+        .gear svg {
+            z-index: -1;
+            opacity: 0.5;
+            animation-name: rotate;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .projects {
+            margin: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
+
+        .projects div {
+            padding: 10px;
+            height: 600px;
+            border: 5px solid black;
+            align-items: center;
+            font-size: 30px;
+            background-color: rgb(255, 255, 196);
+        }
+
+        body h1 {
+            font-size: 60px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .projects div:hover {
+            animation-name: move;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes move {
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        .about p {
+            font-size: 30px;
+            margin: 5px;
+        }
+
+        .contact {
+            margin: 5px;
+            font-size: 20px;
+        }
+
+        form {
+            padding: 5px;
+            font-size: 35px;
+            font-weight: bold;
+
+        }
+
+        input {
+            height: 25px;
+            width: 350px;
+            margin: 5px;
+            transform: translateY(-10px);
+        }
+
+        #sub {
+            margin: 10px;
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+            margin-left: 650px;
+        }
+
+        #sub:hover {
+            background-color: rgb(206, 194, 194);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar {
+            background-color: tomato;
+            z-index: 10;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            font-size: 50px;
+            padding: 0% 13%;
+            width: 100%;
+        }
+
+        @media (max-width: 420px) {
+            .intro {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            #intro1 {
+                width: 100%;
+                margin: 20px 0;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .projects div {
+                height: auto;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gear"><svg xmlns="http://www.w3.org/2000/svg" width="600px" height="600px" fill="currentColor"
+            viewBox="0 0 16 16">
+            <path
+                d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5m0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78zM5.048 3.967l-.087.065zm-.431.355A4.98 4.98 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8zm.344 7.646.087.065z" />
+        </svg>
+    </div>
+    <div class="navbar">
+        <a href="#intro1">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#des">About Me</a>
+        <a href="#cont">Contact Me</a>
+    </div>
+    <br><br><br>
+    <div class="intro">
+        <img src="myimg.jpg" id="intro1">
+        <div id="intro2">
+            <h1><u>Chandrabhatla Sriram Satvik</u></h1>
+            <h2>I'm a </h2>
+            <h2 id="display"></h2><br>
+            <h2>I'm a student from EEE department of IIT Guwahati.</h2><br>
+            <h2>I'm from Hyderabad, Telangana, India.</h2>
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <hr color="black"><br><br><br><br><br>
+    <h1>Projects</h1>
+    <div class="projects" id="projects">
+        <div>
+            In this project I have created a very basic gym website. At the time of building this project I was a
+            beginner to WebDev. <br><br><br>
+            <a href="https://sriramsatvik-dev.github.io/gymbros/sriramhome.html" target="_blank">Click here</a> to view
+            the website.<br><br>
+            <span><img src="gymbros.png" width="625px"></span>
+        </div>
+        <div>
+            This project is a recreation of a newsblog. I built this project during the coding week but I couldn't
+            finish it completely. I was very new to WebDev while buliding this website. <br><br><br>
+            <span><img src="Newsletterdup.png" width="625px"></span>
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <hr color="black"><br><br><br><br><br>
+    <div class="about">
+        <h1 id="des">About Me</h1>
+        <p>Hello! I'm Sriram Satvik, a passionate and dedicated Engineer who loves to research and learn new
+            technologies that help improving the lives of people. I believe that there is no particular field or branch
+            which a person belongs to. It completely depends on a person's interest in something and his/her desire to
+            excel upon it. Though I'm very new to the field of Engineering, I've honed my skills in frontend Web
+            Development and continuously strive to stay updated with the latest trends and technologies.<br><br>By
+            origin, I'm pursuing a B.Tech in Electrical and Electronics Engineering from IIT Guwahati. Though I very much love my field,
+            I have recently developed an interest in the art of website creation and it's development. <br><br>When I'm
+            not working, you can find me spending quality time with friends. I am always eager to connect with
+            like-minded professionals and take on new challenges that push the boundaries of what's possible.</p>
+    </div>
+    <br><br><br><br><br>
+    <hr color="black"><br><br><br><br><br>
+    <div class="contact">
+        <h1 id="cont">Contact Me</h1>
+        <h2>Mobile No.: 7569664109</h2>
+        <h2>Email me: s.chandrabhatla@iitg.ac.in</h2>
+        <br>
+        <hr color="black" width="70%"><br>
+        <h2>Please fill in your details, I'll contact you:</h2>
+        <form>
+            <div style="margin-left: 540px;">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name"><br>
+            </div>
+            <div style="margin-left: 450px;">
+                <label for="position">Designation: </label>
+                <input type="text" name="position" id="position"><br>
+            </div>
+            <div style="margin-left: 430px;">
+                <label for="org">Organisation: </label>
+                <input type="text" name="org" id="org"><br>
+            </div>
+            <div style="margin-left: 487px;">
+                <label for="mail">E-mail id: </label>
+                <input type="text" name="mail" id="mail"><br>
+            </div><br>
+            <input type="submit" id="sub">
+        </form>
+        <br>
+    </div>
+    <br><br><br><br><br>
+    <script>
+        const display = ["Frontend Developer.", "Electronics Engineer.", "Electrical Engineer."];
+        let i = 0;
+        let change = () => {
+            document.querySelector("#display").innerText = display[i];
+            i = (i + 1) % (display.length);
+        }
+        setInterval(change, 1500);
+        function validateForm(event) {
+            const name = document.getElementById('name').value.trim();
+            const position = document.getElementById('position').value.trim();
+            const org = document.getElementById('org').value.trim();
+            const mail = document.getElementById('mail').value.trim();
+
+            if (!name) {
+                alert('Please enter your name.');
+                event.preventDefault();
+                return false;
+            }
+            if (!position) {
+                alert('Please enter your designation.');
+                event.preventDefault();
+                return false;
+            }
+            if (!org) {
+                alert('Please enter your organisation.');
+                event.preventDefault();
+                return false;
+            }
+            if (!mail) {
+                alert('Please enter your e-mail id.');
+                event.preventDefault();
+                return false;
+            }
+            let count = 0;
+            for (let ch of mail) {
+                if (ch === '@') {
+                    break;
+                }
+                else {
+                    count++;
+                }
+            }
+            if (count == mail.length) {
+                alert("Enter a valid e-mail id");
+                event.preventDefault();
+                return false;
+            }
+            return true;
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', validateForm);
+        });
+        ScrollReveal().reveal("#intro1", { delay: 1000, distance: '50px', scale: 0.85, duration: 1000 });
+        ScrollReveal().reveal("#intro2", { delay: 1000, distance: '50px', scale: 0.85, duration: 1000 });
+        ScrollReveal().reveal("h1", { delay: 1000, distance: '50px', scale: 0.85, duration: 1000 });
+        ScrollReveal().reveal(".projects", { delay: 1000, distance: '50px', scale: 0.85, duration: 1000 });
+        ScrollReveal().reveal(".about", { delay: 1000, distance: '50px', scale: 0.85, duration: 1000 });
+        ScrollReveal().reveal(".contact", { delay: 1000, distance: '50px', scale: 0.85, duration: 1000 });
+        ScrollReveal().reveal("form", { delay: 1000, distance: '50px', scale: 0.85, duration: 1000 });
+    </script>
+</body>
+
+</html>
